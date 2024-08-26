@@ -1,6 +1,6 @@
-# SameyAI
+# Samey AI Assessment Solution By Pranav Bansode.
 
-#Problem_1 (Only Explorer Mode) [Problem_1.py]
+## • Problem_1 (Only Explorer Mode) [Problem_1.py]
 ## Solution Overview
 
 This solution creates an interactive web application combining natural language processing (NLP) and machine learning techniques to enhance sentiment analysis and psychological insights from text and audio inputs. The application leverages various NLP libraries and machine learning algorithms to comprehensively analyze emotional states and psychological conditions based on user-provided text or audio data.
@@ -80,13 +80,10 @@ To run the application locally:
    ```
 
 
-#Problem_2 (SameyRAG.ipynb)
 
-Based on the problem statement and the search results provided, here's a more detailed explanation for the GitHub README file:
 
-# Retrieval-Augmented Generation (RAG) Implementation
 
-This repository demonstrates a basic implementation of Retrieval-Augmented Generation (RAG), integrating retrieval methods with large language models (LLMs) to generate responses based on relevant documents.
+## • Problem_2 (SameyRAG.ipynb)
 
 ## Solution Overview
 
@@ -156,3 +153,7 @@ Our RAG system operates as follows:
 3. The system will retrieve relevant documents and generate responses based on those documents and your input.
 
 
+
+
+
+## • Problem_3 (problem_3.py)
