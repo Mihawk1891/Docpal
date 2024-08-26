@@ -5,7 +5,7 @@
 
 This solution creates an interactive web application combining natural language processing (NLP) and machine learning techniques to enhance sentiment analysis and psychological insights from text and audio inputs. The application leverages various NLP libraries and machine learning algorithms to comprehensively analyze emotional states and psychological conditions based on user-provided text or audio data.
 
-##3 Key Features of this solution
+### Key Features of this solution
 
 - Sentiment Analysis: Determines the overall sentiment of text input using advanced NLP techniques.
 - Psychological State Classification: Identifies psychological states such as joy, anger, confusion, excitement, sadness, anxiety, calmness, and boredom.
@@ -41,19 +41,6 @@ The project consists of several key components:
 - Entity Extraction: Leverages spaCy's named entity recognition capabilities
 - Audio Feature Extraction: Analyzes tempo and pitch characteristics of speech
 
-### Potential Applications
-
-- Mental Health Support Systems
-- Customer Service Analytics
-- Social Media Monitoring Tools
-- Content Creation Assistance
-
-### Future Improvements
-
-- Integration with additional NLP libraries for enhanced feature extraction
-- Development of more sophisticated machine learning models for improved accuracy
-- Expansion to support multiple languages
-- Incorporation of real-time feedback mechanisms
 
 ### Getting Started
 
@@ -130,7 +117,7 @@ Our RAG system operates as follows:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/[your-username]/[repository-name].git
+   git clone https://github.com/Mihawk1891/SameyAI.git
    ```
 
 2. Set up the Python environment:
@@ -192,7 +179,7 @@ The solution implements an optimized Large Language Model (LLM) based document a
 
 To run this application locally:
 
-1. Clone the repository
+1. Clone the repository `https://github.com/Mihawk1891/SameyAI.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Set environment variables (API_KEY, etc.)
 4. Run the server: `python run_server.py`
