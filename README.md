@@ -188,6 +188,20 @@ The solution implements an optimized Large Language Model (LLM) based document a
    - Includes functions for quantizing and dequantizing embeddings
    - Potentially reduces memory usage and computational complexity
 
+## Getting Started
+
+To run this application locally:
+
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Set environment variables (API_KEY, etc.)
+4. Run the server: `python run_server.py`
+
+To interact with the API:
+
+- Send POST requests to `http://localhost:8000/query`
+- Include query text in the request body
+
 ### Detailed Implementation
 
 1. **Hybrid Vector Search Optimization**
@@ -228,17 +242,3 @@ The solution implements an optimized Large Language Model (LLM) based document a
 4. **Reduced Redundancy**: Implements semantic caching to reduce redundant computations for repeated queries.
 
 5. **Asynchronous Execution**: Uses asyncio to manage concurrent processing of queries and batches.
-
-### Potential Improvements
-
-1. **Further Quantization**: Implement quantization techniques for the main model to potentially reduce memory usage and computation time.
-
-2. **Distributed Processing**: Consider integrating distributed computing frameworks like Ray for even faster processing of large datasets.
-
-3. **Advanced Indexing**: Explore more advanced indexing techniques such as inverted indexes for improved retrieval efficiency.
-
-4. **Real-time Updates**: Implement mechanisms for real-time updates of cached results to maintain freshness of information.
-
-5. **Scalability**: Design the system to scale horizontally, allowing for easy addition of more resources as needed.
-
-By combining these optimizations, the solution aims to significantly enhance the performance of the LLM-based document analysis system, making it capable of handling larger volumes of documents and more complex queries efficiently.
