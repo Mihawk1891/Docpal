@@ -238,41 +238,48 @@ To run this application locally:
 1. Clone the repository `https://github.com/Mihawk1891/SameyAI.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Set environment variables (API_KEY, etc.)
-4. Run the server: `python run_server.py`
+4. Run the server: `python problem_3.py`
 
 To interact with the API:
 
 - Send POST requests to `http://localhost:8000/query`
 - Include query text in the request body
 
-### Detailed Implementation
+## My Solution approach for this problem 
+ 
+### 1. Hybrid Vector Search with HNSW Algorithm
 
-1. **Hybrid Vector Search Optimization**
-   - Creates an HNSW index for efficient approximate nearest neighbor search
-   - Uses hnswlib for building the HNSW index
-   - Integrates with SentenceTransformer for embedding generation
+I developed this optimization technique using the Hierarchical Navigable Small World (HNSW) algorithm to efficiently search through large vector spaces.
 
-2. **Semantic Caching Mechanism**
-   - Implements a cache using SentenceTransformer and FAISS
-   - Sets a similarity threshold (0.9) for result retrieval from the cache
-   - Automatically refreshes the cache when it reaches capacity
+I implemented this optimization by creating an HNSW index using the `hnswlib` library. I embedded documents using `GoogleGenerativeAIEmbeddings`. The `hybrid_search` function I implemented actually searches the HNSW index to quickly retrieve relevant documents based on similarity, improving overall system performance.
 
-3. **Dynamic Batching**
-   - Uses asyncio.Queue for managing query batches
-   - Implements timeout handling to prevent indefinite waiting
-   - Processes queries in batches to optimize CPU utilization
+I chose this approach because the HNSW algorithm provides faster search times compared to traditional indexing methods like KD-trees or ball trees. It maintains a good balance between search speed and memory usage, making it suitable for large-scale applications.
 
-4. **Embedding Quantization**
-   - Provides functions for quantizing and dequantizing embeddings
-   - Allows for potential reduction in memory usage and computational complexity
+### 2. Semantic Caching
 
-5. **API Integration**
-   - Built using FastAPI for creating a RESTful API
-   - Supports POST requests for querying the system
+I developed this optimization technique to cache frequently accessed results and reduce redundant computations.
 
-6. **LLM Integration**
-   - Uses Google Generative AI for text generation capabilities
-   - Configures the model with an API key for secure access
+I implemented this optimization by creating a `SemanticCache` class that manages the caching mechanism. I used Faiss' `IndexFlatIP` for efficient storage and retrieval of embeddings. The cache is dynamically updated after each successful search to ensure up-to-date results.
+
+I chose this approach because caching allows me to avoid recalculating responses for repeated queries, improving response time for frequently asked questions. The dynamic adjustment of cache size prevents memory overflow.
+
+### 3. Dynamic Batching
+
+I developed this optimization technique to process queries in batches, optimizing API calls and resource utilization.
+
+I implemented this optimization by creating a `QueryBatcher` class that handles asynchronous query processing. I collect queries in a queue and process them in batches. The `process_batch` method I implemented coordinates the execution of queries and updates the cache.
+
+I chose this approach because batch processing reduces the number of API calls to the LLM, helps manage concurrent queries more efficiently, and reduces the overhead associated with individual query processing.
+
+### 4. Quantization of Embeddings
+
+I developed this optimization technique to compress high-dimensional embeddings, reducing memory usage and computation time.
+
+I implemented this optimization by developing the `quantize_embeddings` function to perform the quantization process. I also created the `dequantize_embeddings` function to reverse the process when needed. This technique can be applied to both input and output embeddings.
+
+I chose this approach because quantization significantly reduces the memory footprint of embeddings. It speeds up operations involving embeddings without sacrificing much accuracy, allowing for more efficient storage and transmission of embeddings.
+
+These optimizations collectively contribute to improved performance by reducing computational complexity, enhancing search efficiency, managing resources effectively, and optimizing memory usage. They allow the system to handle larger datasets and more complex queries while maintaining responsiveness and accuracy.
 
 ### Performance Enhancements
 
