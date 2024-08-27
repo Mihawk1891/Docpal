@@ -34,39 +34,73 @@ The project consists of several key components:
 4. Visualization Module: Creates interactive charts using Plotly
 5. Main Application: Manages user input selection and results display
 
-### Implementation Highlights
+Certainly! Here's an explanation of my work, the challenges faced, and instructions on running the code for the sentiment and psychological insight analysis application:
 
-- Custom Psychological State Classifier: Trains a machine learning model to identify specific emotional states
-- Advanced Sentiment Scoring: Uses compound scores for nuanced sentiment analysis
-- Entity Extraction: Leverages spaCy's named entity recognition capabilities
-- Audio Feature Extraction: Analyzes tempo and pitch characteristics of speech
+### Solution Approache
 
+I developed a web interface that takes user input in the form of text or audio files and outputs sentiment and psychological insights about the speakers. The application combines natural language processing, machine learning, and web development to provide a comprehensive analysis tool.
 
-### Getting Started
+Key features of my implementation:
 
-To run the application locally:
+1. **Text Input**: Users can input text directly through a web interface, and the application analyzes sentiment, subjectivity, psychological state, and entities within the text.
 
-1. Install required dependencies using pip:
+2. **Audio Input**: Users can upload audio files, which are transcribed and analyzed for sentiment, subjectivity, psychological state, and audio features like tempo and pitch.
+
+3. **Sentiment Analysis**: I implemented sentiment analysis using NLTK's VADER tool and TextBlob library.
+
+4. **Psychological State Classification**: I developed a custom classification model using Random Forest to identify psychological states from text inputs.
+
+5. **Entity Extraction**: I integrated spaCy for entity recognition in text inputs.
+
+6. **Audio Processing**: I added functionality to analyze audio files using librosa, extracting tempo and pitch features.
+
+7. **Web Interface**: I built the entire application using Streamlit, providing an interactive and user-friendly interface for both text and audio inputs.
+
+### Challenges Faced
+
+During development, I encountered several challenges:
+
+1. **Data Collection**: Gathering sufficient training data for the psychological state classification model proved challenging. I had to manually create a dataset of sample phrases associated with different psychological states.
+
+2. **Model Accuracy**: Achieving high accuracy in classifying psychological states was difficult due to the subjective nature of human emotions and the complexity of psychological states.
+
+3. **Audio Transcription**: Implementing reliable speech-to-text transcription was tricky, especially with background noise or accents.
+
+4. **Performance Optimization**: Balancing the trade-off between model performance and real-time processing speed was a challenge, particularly for longer texts or audio files.
+
+5. **User Experience**: Designing an intuitive interface that guides users through the input selection and result interpretation was important but challenging.
+
+### Running the Code
+
+To run the application locally, follow these steps:
+
+1. Ensure you have the required libraries installed:
    ```
-   pip install streamlit nltk spacy scikit-learn textblob librosa speech_recognition plotly
+   pip install streamlit nltk spacy scikit-learn librosa numpy plotly
    ```
 
-2. Download necessary NLTK data:
+2. Download the necessary NLTK resources:
    ```
    python -m nltk.downloader vader_lexicon punkt averaged_perceptron_tagger maxent_ne_chunker words
    ```
 
-3. Load the spaCy English model:
+3. Install spaCy model:
    ```
    python -m spacy download en_core_web_sm
    ```
 
-4. Run the application:
+4. Clone the repository and navigate to the project directory:
    ```
-   problem_1.py
+   git clone https://github.com/Mihawk1891/SameyAI.git
+   cd sentiment_analysis_app
    ```
 
+5. Run the Streamlit app:
+   ```
+   streamlit run main.py
+   ```
 
+6. Open a web browser and navigate to http://localhost:8501 to access the application.
 
 
 
