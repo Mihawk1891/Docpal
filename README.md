@@ -26,7 +26,7 @@ This solution creates an interactive web application combining natural language 
 
 ### Solution Structure
 
-The project consists of several key components:
+This Solution consists of several key components:
 
 1. EnhancedAnalyzer Class: Centralizes all analysis functionality
 2. Text Analysis Module: Handles sentiment scoring, subjectivity detection, and psychological state classification
@@ -34,9 +34,9 @@ The project consists of several key components:
 4. Visualization Module: Creates interactive charts using Plotly
 5. Main Application: Manages user input selection and results display
 
-Certainly! Here's an explanation of my work, the challenges faced, and instructions on running the code for the sentiment and psychological insight analysis application:
 
-### Solution Approache
+
+### Solution Approach
 
 I developed a web interface that takes user input in the form of text or audio files and outputs sentiment and psychological insights about the speakers. The application combines natural language processing, machine learning, and web development to provide a comprehensive analysis tool.
 
@@ -119,7 +119,7 @@ Key features of this project:
 
 ### How It Works
 
-Our RAG system operates as follows:
+My RAG system operates as follows:
 
 1. **Document Loading**: PDF files are loaded and processed using PyPDFLoader and RecursiveCharacterTextSplitter.
 
@@ -149,7 +149,7 @@ Our RAG system operates as follows:
 
 
 
-### How was My approach to this problem
+### Solution approach
 
 ### Understanding the Problem Statement
 
