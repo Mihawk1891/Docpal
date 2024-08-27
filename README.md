@@ -97,7 +97,7 @@ To run the application locally, follow these steps:
 
 5. Run the Streamlit app:
    ```
-   streamlit run main.py
+   streamlit run Problem_1.py
    ```
 
 6. Open a web browser and navigate to http://localhost:8501 to access the application.
