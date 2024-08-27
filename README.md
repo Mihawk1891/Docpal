@@ -113,6 +113,65 @@ Our RAG system operates as follows:
   - Separate functions for loading documents, creating vector stores, retrievers, and RAG chains.
   - Allows for easy modification and extension of individual components.
 
+
+
+### How was My approach to this problem
+
+### Understanding the Problem Statement
+
+The objective of this project is to develop a system that retrieves relevant documents from a given corpus and uses them to generate responses. This task involves integrating two key components:
+
+1. A retrieval method (such as BM25 or dense retrieval)
+2. A Language Model (LLM) for generating responses
+
+### Solution Approach
+
+I approached this challenge by implementing a Retrieval-Augmented Generation (RAG) architecture. I designed a system that combines state-of-the-art retrieval techniques with advanced language generation capabilities.
+
+### Retrieval Methods Implemented
+
+I developed My system to support two retrieval methods:
+
+1. Dense Retrieval: This method uses Google GenerativeAI embeddings to capture semantic similarities between documents and queries. It's particularly effective for large-scale datasets and can capture nuanced semantic relationships.
+
+2. BM25 Retrieval: This term-frequency based approach is excellent for smaller datasets or when term frequencies are crucial. It allows for fine-tuning of weighting schemes to optimize retrieval performance.
+
+### Integration with Language Model
+
+My RAG chain integrates the retrieval method with the LLM in the following way:
+
+1. I create a dynamic retriever function that allows us to switch between dense and BM25 retrieval methods based on the specific requirements of the task and corpus nature.
+
+2. The retrieved relevant documents are then formatted and used as context for the LLM.
+
+3. My prompt template guides the LLM to generate responses based on both the user input and the retrieved context.
+
+### Technical Implementation Details
+
+I implemented the following components:
+
+1. Document Loading and Splitting: We developed functions to load PDF files and split them into manageable chunks for processing.
+
+2. Vector Store Creation: We utilized FAISS vector store to efficiently manage and query document embeddings.
+
+3. Retrieval Method Selection: Our system dynamically chooses between dense and BM25 retrieval methods based on user input.
+
+4. RAG Chain Creation: We designed a flexible RAG chain structure that incorporates both retrieval and generation components.
+
+5. Chat Loop Implementation: We developed a chat loop that continuously processes user queries and generates responses based on the retrieved information.
+
+### Benefits of This Approach
+
+This RAG architecture offers several advantages:
+
+1. Flexibility: It allows for easy switching between dense and BM25 retrieval methods, adapting to different corpus characteristics.
+
+2. Scalability: The system can handle large datasets efficiently due to the use of vector stores and optimized retrieval algorithms.
+
+3. Contextual Understanding: By incorporating relevant documents into the LLM's context, we enhance the quality and accuracy of generated responses.
+
+4. User-Friendly Interface: Our chat-based interface makes it easy for users to interact with the system and receive relevant information.
+
 ### Usage
 
 1. Clone the repository:
@@ -138,9 +197,6 @@ Our RAG system operates as follows:
 1. Run the main script to start the chat interface.
 2. Type your queries or questions.
 3. The system will retrieve relevant documents and generate responses based on those documents and your input.
-
-
-
 
 
 ## • Problem_3 (problem_3.py)
