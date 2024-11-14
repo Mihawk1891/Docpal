@@ -1,9 +1,6 @@
-# Samey AI Assessment Solution By Pranav Bansode.
 
-## • Problem_1 (Only Explorer Mode) [Problem_1.py]
-### Solution Overview
-
-This solution creates an interactive web application combining natural language processing (NLP) and machine learning techniques to enhance sentiment analysis and psychological insights from text and audio inputs. The application leverages various NLP libraries and machine learning algorithms to comprehensively analyze emotional states and psychological conditions based on user-provided text or audio data.
+## • Problem_1
+This project creates an interactive web application combining natural language processing (NLP) and machine learning techniques to enhance sentiment analysis and psychological insights from text and audio inputs. The application leverages various NLP libraries and machine learning algorithms to comprehensively analyze emotional states and psychological conditions based on user-provided text or audio data.
 
 ### Key Features of this solution
 
@@ -104,7 +101,7 @@ To run the application locally, follow these steps:
 
 
 
-## • Problem_2 (SameyRAG.ipynb)
+## • Rag (SameyRAG.ipynb)
 
 ### Solution Overview
 
@@ -233,11 +230,11 @@ This RAG architecture offers several advantages:
 3. The system will retrieve relevant documents and generate responses based on those documents and your input.
 
 
-## • Problem_3 (problem_3.py)
+## •  LLM based document analysis system (problem_3.py)
 
 ### Solution Overview
 
-The solution implements an optimized Large Language Model (LLM) based document analysis system. It leverages various techniques to improve performance, including hybrid vector search, semantic caching, dynamic batching, and potential embedding quantization. The system processes PDF documents, extracts relevant information, and provides detailed analysis based on user queries.
+The project implements an optimized Large Language Model (LLM) based document analysis system. It leverages various techniques to improve performance, including hybrid vector search, semantic caching, dynamic batching, and potential embedding quantization. The system processes PDF documents, extracts relevant information, and provides detailed analysis based on user queries.
 
 ### Key Components
 
